@@ -1,3 +1,22 @@
+# Group we need to create
+GROUP_NAME="plugdev"
+
+app_group_exists() {
+    if [ $(getent group "${GROUP_NAME}") ]; then
+        true
+    else
+        false
+    fi
+}
+
+pre_install() {
+    if app_group_exists; then
+        : # Do nothing
+    else
+        groupadd "${GROUP_NAME}"
+    fi
+}
+
 post_install() {
 
 	echo "To use your fingerprint sensor, ensure your user is part of the \`plugdev\` group. You can add your user with the command \`usermod -aG plugdev <username>\`."
