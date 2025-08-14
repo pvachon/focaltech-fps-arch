@@ -1,6 +1,6 @@
 # Adapted from original PKGBUILD by Harry Walker <me@harrywalker.uk>
 pkgname=libfprint-focaltech
-pkgver=2.1.94.4
+pkgver=1.94.4
 pkgrel=1
 pkgdesc="Proprietary driver for the Focaltech fingerprint reader"
 arch=('x86_64')
